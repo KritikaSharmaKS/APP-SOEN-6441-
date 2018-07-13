@@ -1,0 +1,31 @@
+<project>
+	
+	<property name="source.dir" location="src" />
+	<property name="doc.dir" location="doc" />
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="build/classes" />
+		<javac srcdir="src/com/soen6441/labsession2/main" destdir="build/classes" />
+	</target>
+
+	<target name="jar">
+		<mkdir dir="build/jar" />
+		<jar destfile="build/jar/FilteringApples.jar" basedir="build/classes">
+			<manifest>
+				<attribute name="Main-Class" value="com.soen6441.labsession2.main.FilteringApples" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run">
+		<java jar="build/jar/FilteringApples.jar" fork="true" />
+	</target>
+
+	<target name="doc" description="generate documentation">
+		<javadoc sourcepath="${source.dir}" destdir="${doc.dir}" />
+	</target>
+
+</project>

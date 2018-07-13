@@ -1,6 +1,8 @@
-package lambdasinaction.chap1;
+package com.soen6441.labsession2.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,11 +10,12 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import lambdasinaction.chap1.FilteringApples.Apple;
+import com.soen6441.labsession2.main.FilteringApples;
+import com.soen6441.labsession2.main.FilteringApples.Apple;
 
 public class FilteringApplesTest {
 
-	static List<Apple> inventory;
+static List<Apple> inventory;
 	
 	@BeforeClass
 	public static void beforeClassMethod(){
@@ -102,5 +105,4 @@ public class FilteringApplesTest {
         assertEquals(2, FilteringApples.filterApples(inventory, (Apple a) -> a.getWeight() < 80 || 
                 "brown".equals(a.getColor())).size());
 	}
-
 }

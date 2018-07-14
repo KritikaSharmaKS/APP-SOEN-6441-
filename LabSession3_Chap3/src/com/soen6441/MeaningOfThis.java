@@ -1,7 +1,18 @@
+package com.soen6441;
 
+/**
+ * @author Kritika_2
+ *
+ */
 public class MeaningOfThis
 {
+	/**
+	 * 
+	 */
 	public final int value = 4;
+	/**
+	 * 
+	 */
 	public void doIt()
 	{
 		int value = 6;
@@ -14,6 +25,9 @@ public class MeaningOfThis
 		};
 		r.run(); 
 	}
+	/**
+	 * @param args
+	 */
 	public static void main(String...args)
 	{       
 		MeaningOfThis m = new MeaningOfThis();

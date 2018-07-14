@@ -1,3 +1,4 @@
+package com.soen6441;
 
 import java.util.*;
 
@@ -34,7 +35,10 @@ public class FilteringApples{
 			}
 		});
 		System.out.println(redApples2);
-
+		
+		prettyPrintApple(inventory, new AppleWeightDisplay());
+		prettyPrintApple(inventory, new AppleColorDisplay());
+		prettyPrintApple(inventory, new ClassifyAppleByWeightDispaly());
 	}
 
 	public static List<Apple> filterGreenApples(List<Apple> inventory){
@@ -78,6 +82,13 @@ public class FilteringApples{
 		return result;
 	}       
 
+	public static void prettyPrintApple(List<Apple> inventory, AppleFormatter appleFormatter){
+	    for(Apple apple: inventory) {
+		String output = appleFormatter.display(apple);
+		System.out.println(output);
+	    }
+	}
+	
 	public static class Apple {
 		private int weight = 0;
 		private String color = "";
@@ -115,6 +126,35 @@ public class FilteringApples{
 		public boolean test(Apple a);
 	}
 
+	interface AppleFormatter{
+		public String display(Apple a);
+	}
+	
+	static class AppleWeightDisplay implements AppleFormatter{
+		@Override
+		public String display(Apple a) {
+			return "weight="+a.getWeight().toString();
+		}
+	}
+	
+	static class AppleColorDisplay implements AppleFormatter{
+		@Override
+		public String display(Apple a) {
+			return "color="+a.getColor();
+		}
+	}
+	
+	static class ClassifyAppleByWeightDispaly implements AppleFormatter{
+		@Override
+		public String display(Apple a) {
+			if(a.getWeight()>150)
+				return "heavy apple: "+a.toString();
+			
+			return "light apple: "+a.toString();
+			
+		}
+	}
+	
 	static class AppleWeightPredicate implements ApplePredicate{
 		public boolean test(Apple apple){
 			return apple.getWeight() > 150; 
@@ -132,4 +172,8 @@ public class FilteringApples{
 					&& apple.getWeight() > 150; 
 		}
 	}
+	
+	
+	
+	
 }

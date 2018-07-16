@@ -1,3 +1,4 @@
+//Task #3
 package com.soen6441;
 
 import java.util.*;
@@ -41,7 +42,7 @@ public class FilteringApples{
 		prettyPrintApple(inventory, new ClassifyAppleByWeightDispaly());
 	}
 
-	public static List<Apple> filterGreenApples(List<Apple> inventory){
+	/*public static List<Apple> filterGreenApples(List<Apple> inventory){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple: inventory){
 			if("green".equals(apple.getColor())){
@@ -49,8 +50,9 @@ public class FilteringApples{
 			}
 		}
 		return result;
-	}
+	}*/
 
+	//red->1 apple //blue->none
 	public static List<Apple> filterApplesByColor(List<Apple> inventory, String color){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple: inventory){
@@ -61,7 +63,7 @@ public class FilteringApples{
 		return result;
 	}
 
-	public static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight){
+	/*public static List<Apple> filterApplesByWeight(List<Apple> inventory, int weight){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple: inventory){
 			if(apple.getWeight() > weight){
@@ -69,9 +71,11 @@ public class FilteringApples{
 			}
 		}
 		return result;
-	}
+	}*/
 
-
+	//AppleWeightPredicate -> 1
+	//AppleColorPredicate -> 2
+	//AppleRedAndHeavyPredicate -> 0
 	public static List<Apple> filter(List<Apple> inventory, ApplePredicate p){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple : inventory){

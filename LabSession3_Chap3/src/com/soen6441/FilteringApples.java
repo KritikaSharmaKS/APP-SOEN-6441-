@@ -39,7 +39,7 @@ public class FilteringApples{
 		
 		prettyPrintApple(inventory, new AppleWeightDisplay());
 		prettyPrintApple(inventory, new AppleColorDisplay());
-		prettyPrintApple(inventory, new ClassifyAppleByWeightDispaly());
+		prettyPrintApple(inventory, new ClassifyAppleByWeightDisplay());
 	}
 
 	/*public static List<Apple> filterGreenApples(List<Apple> inventory){
@@ -86,6 +86,9 @@ public class FilteringApples{
 		return result;
 	}       
 
+	//AppleWeightDisplay -> 
+	//AppleColorDisplay -> 
+	//ClassifyAppleByWeightDisplay ->
 	public static void prettyPrintApple(List<Apple> inventory, AppleFormatter appleFormatter){
 	    for(Apple apple: inventory) {
 		String output = appleFormatter.display(apple);
@@ -148,7 +151,7 @@ public class FilteringApples{
 		}
 	}
 	
-	static class ClassifyAppleByWeightDispaly implements AppleFormatter{
+	static class ClassifyAppleByWeightDisplay implements AppleFormatter{
 		@Override
 		public String display(Apple a) {
 			if(a.getWeight()>150)
@@ -159,18 +162,18 @@ public class FilteringApples{
 		}
 	}
 	
-	static class AppleWeightPredicate implements ApplePredicate{
+	public static class AppleWeightPredicate implements ApplePredicate{
 		public boolean test(Apple apple){
 			return apple.getWeight() > 150; 
 		}
 	}
-	static class AppleColorPredicate implements ApplePredicate{
+	public static class AppleColorPredicate implements ApplePredicate{
 		public boolean test(Apple apple){
 			return "green".equals(apple.getColor());
 		}
 	}
 
-	static class AppleRedAndHeavyPredicate implements ApplePredicate{
+	public static class AppleRedAndHeavyPredicate implements ApplePredicate{
 		public boolean test(Apple apple){
 			return "red".equals(apple.getColor()) 
 					&& apple.getWeight() > 150; 

@@ -86,9 +86,9 @@ public class FilteringApples{
 		return result;
 	}       
 
-	//AppleWeightDisplay -> 
-	//AppleColorDisplay -> 
-	//ClassifyAppleByWeightDisplay ->
+	//AppleWeightDisplay -> "weight="+a.getWeight().toString();
+	//AppleColorDisplay -> "color="+a.getColor();
+	//ClassifyAppleByWeightDisplay -> "heavy apple: "+a.toString(); for 1, "light apple: "+a.toString(); for 2  
 	public static void prettyPrintApple(List<Apple> inventory, AppleFormatter appleFormatter){
 	    for(Apple apple: inventory) {
 		String output = appleFormatter.display(apple);
@@ -137,7 +137,7 @@ public class FilteringApples{
 		public String display(Apple a);
 	}
 	
-	static class AppleWeightDisplay implements AppleFormatter{
+	public static class AppleWeightDisplay implements AppleFormatter{
 		@Override
 		public String display(Apple a) {
 			return "weight="+a.getWeight().toString();

@@ -1,3 +1,4 @@
+//Task #2
 package com.soen6441.test;
 import static org.junit.Assert.*;
 
@@ -57,7 +58,21 @@ static List<Apple> inventory, inventory2;
 		assertEquals(1, FilteringApples.filter(inventory2, new FilteringApples.AppleRedAndHeavyPredicate()).size());
 	}
 	
+/*	@Test 
+	public void testprettyPrintApple_ConditionForAppleWeightDisplay(){
+		for(int i=0; i<inventory.size();i++)
+			assertEquals("weight="+inventory.get(i).getWeight().toString(), FilteringApples.prettyPrintApple(inventory, new FilteringApples.AppleWeightDisplay()));
+	}
 	
+	@Test 
+	public void testprettyPrintApple_ConditionForAppleColorDisplay(){
+		assertEquals(1, FilteringApples.filter(inventory2, new FilteringApples.AppleRedAndHeavyPredicate()).size());
+	}
+	
+	@Test 
+	public void testprettyPrintApple_ConditionForClassifyAppleByWeightDisplay(){
+		assertEquals(1, FilteringApples.filter(inventory2, new FilteringApples.AppleRedAndHeavyPredicate()).size());
+	}*/
 
 	@Override
 	public int compare(Apple o1, Apple o2) {
